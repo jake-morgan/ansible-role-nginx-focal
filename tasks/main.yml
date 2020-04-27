@@ -1,0 +1,34 @@
+---
+- name: Remove existing NGINX installations
+  package:
+    name: nginx
+    state: absent
+  when: uninstall_existing_nginx | bool
+
+- name: Install NGINX
+  apt:
+    name: nginx
+    state: present
+    update-cache: true
+
+- name: Start and enable NGINX service
+  service:
+    name: nginx
+    state: started
+    enabled: true
+
+- name: Allow NGINX firewall access
+  ufw:
+    rule: allow
+    name: "Nginx {{ ufw_access }}"
+  when: ufw_access != "none"
+
+- name: Deny NGINX firewall access
+  ufw:
+    rule: deny
+    name: "{{ item }}"
+  loop:
+    - Nginx HTTP
+    - Nginx HTTPS
+    - Nginx Full
+  when: ufw_access == "none"
