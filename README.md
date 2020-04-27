@@ -2,6 +2,7 @@ NGINX Focal Fossa
 =========
 
 ![master](https://github.com/jake-morgan/ansible-role-nginx-focal/workflows/master/badge.svg)
+[![galaxy](https://img.shields.io/badge/galaxy-jake__morgan.nginx__focal-5bbdbf.svg)](https://galaxy.ansible.com/jake_morgan/nginx_focal)
 
 Install NGINX on Ubuntu 20.04 LTS (Focal Fossa).
 
