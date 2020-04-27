@@ -17,7 +17,7 @@ Role Variables
 
 | Variable | Description | Type| Required | Default |
 |-|-|-|-|-|
-| `uninstall_existing_nginx` | Description... | Bool | No | `default` |
+| `uninstall_existing_nginx` | Remove existing NGINX installations. | Bool | No | `default` |
 | `ufw_access` | Access Nginx has for UFW. Can be one of `Full`, `HTTP`, `HTTPS`, or, `none`. | String | No | `none` |
 
 Dependencies
